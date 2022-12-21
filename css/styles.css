@@ -26,7 +26,6 @@ html:focus-within {
 
 body {
     position: relative;
-    font-family: var(--ff-body);
     margin: 0;
     min-height: 100vh;
     text-rendering: optimizeSpeed;
@@ -36,8 +35,8 @@ body {
 img,
 picture,
 svg {
-    max-width: 100%;
     display: block;
+    max-width: 100%;
 }
 
 button {
@@ -73,9 +72,24 @@ em {
     └─────────────────────────────────────────────────────────────────────────┘
 ! */
 
+@font-face {
+    font-family: "goshaSansBold";
+    src: url('../assets/fonts/goshaSansRegular.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "goshaSansRegular";
+    src: url('../assets/fonts/goshaSansRegular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     /* * font-family * */
-    --ff-body: 'Courier New', Courier, monospace; 
+    --ff-body: 'goshaSansRegular', Courier, monospace; 
+    --ff-headers: 'goshaSansBold', Courier, monospace; 
 }
 
 ::selection {
@@ -90,4 +104,144 @@ em {
 :focus-visible {
     outline: ridge 2px chartreuse;
     outline-offset: -5px;
+}
+
+body {
+    background:  #fffce8;
+    font-family: var(--ff-body);
+}
+
+.modal-wrapper {  
+    display: grid;
+    min-height: 100vh;
+    place-items: center;  
+}
+
+.modal {
+    border: none;
+    border-radius: 100px;
+    box-shadow:  9px 9px 16px #9e9c90;
+    margin-inline: auto;
+    padding: 33px 50px 50px 50px;
+    width: min(77vw, 700px);
+} 
+
+.modal .modal-heading {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-inline: 8px;
+}
+
+.modal .modal-heading .modal-header {
+    font-family: "goshaSansBold";
+    font-size: 1.625rem;
+}
+
+.modal .modal-heading .close-button {
+    color: #929094;
+    cursor: pointer;
+    font-size: 2.125rem;
+}
+
+.modal-content-wrapper {
+    display: grid;
+    grid-template-areas: "fileDrop" "uploadFeedback";
+}
+
+.modal .file-drop-wrapper {
+    color: #4d4d4d;
+    display: grid;
+    grid-area: fileDrop;
+    place-items: center;
+}
+
+.modal .file-drop-area {
+    border-radius: 22px;
+    border: 5px dashed #4d4d4d;
+    background-color: #eaeaea;
+    cursor: pointer;
+    display: grid;
+    height: 250px;
+    place-items: center;
+    width: 250px;
+}
+
+.modal .file-drop-area .input-click-area {
+    cursor: pointer;
+    display: grid;
+    height: 100%;
+    place-items: center;
+    width: 100%;
+}
+
+.modal .file-drop-area .drop-files-text {
+    align-self: end;
+    margin-inline: auto;
+    width: max-content;
+}
+
+.modal .file-drop-area .input-click-area .button {
+    align-self: start;
+    border: 5.5px solid #cecece;
+    border-radius: 21px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 32px;
+}
+
+.modal .file-drop-area .file-form {
+    display: grid;
+    height: 100%;
+    place-items: center;
+    width: 100%;
+}
+
+.modal .upload-feedback-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    grid-area: uploadFeedback;
+    justify-content: flex-start;
+}
+
+.modal .upload-feedback-wrapper .file-feedback-progress {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal .upload-feedback-wrapper .meter-label {
+    font-family: 'goshaSansRegular', Courier, monospace;
+    font-weight: normal;
+}
+
+.modal .upload-feedback-wrapper meter {
+    height: 24px;
+    width: 200px;
+}
+
+meter::-webkit-meter-optimum-value {
+    background: #78c8a8;
+}
+
+meter::-moz-meter-bar { /* Firefox Pseudo Class */
+    background: #78c8a8;
+}
+
+picture {
+    width: 100px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+@media only screen and (min-width: 768px)  {
+    .modal-content-wrapper {
+        grid-template-areas: "fileDrop uploadFeedback";
+        grid-template-columns: 1fr 1fr;
+    }
 }

@@ -10,6 +10,49 @@
     <script defer href="js/script.js"></script>
 </head>
 <body>
-    hi
+    <div class="modal-wrapper">
+            <dialog open class="modal">
+
+                <div class="modal-heading">
+                    <h1 class="modal-header">Upload Files</h1>
+                    <button class="close-button" aria-label="Close">✕</button>
+                </div>
+
+                <div class="modal-content-wrapper">
+
+                    <section class="file-drop-wrapper">
+                        <div class="file-drop-area">
+                            <form class="file-form" action="post">
+                                <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                                <label class="input-click-area" for="fileElem">
+                                    <p class="drop-files-text">Drop Files Here</p>
+                                    <picture class="upload-icon">
+                                        <img src="assets/images/icon-upload.png">
+                                    </picture>
+                                    <span class="button">Browse</span>
+                                </label>
+                            </form>
+                        </div>
+                    </section>
+
+                    <section class="upload-feedback-wrapper">
+                        <div class="file-feedback-progress">
+                            <label class="meter-label" for="">file 1</label>
+                            <meter min="0" max="100" value="55"></meter>
+                        </div>
+                        <div class="file-feedback-progress">
+                            <label class="meter-label" for="">file 2</label>
+                            <meter min="0" max="100" value="22"></meter>
+                        </div>
+                        <div class="file-feedback-progress">
+                            <label class="meter-label" for="">file 3</label>
+                            <meter min="0" max="100" value="77"></meter>
+                        </div>
+                    </section>
+
+                </div>
+
+            </dialog>
+    </div>
 </body>
 </html>
