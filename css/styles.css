@@ -105,7 +105,6 @@ em {
     --ff-body: 'goshaSansRegular', Courier, monospace; 
     --ff-headers: 'goshaSansBold', Courier, monospace; 
 
-
     --clr-background-primary: #fcfcfc;
     --clr-text-primary: hsl(195,25%,28%);
 }
@@ -114,14 +113,12 @@ em {
     -webkit-background-clip: initial;
     -webkit-text-fill-color: initial;
     background-clip: initial;
-    background-color: chartreuse;
-    color: black;
-
+    background-color: var(--clr-text-primary);
+    color: var(--clr-background-primary);
 }
 
 :focus-visible {
-    outline: ridge 2px chartreuse;
-    outline-offset: -5px;
+    outline: solid 3px #e65334;
 }
 
 body {
@@ -160,8 +157,6 @@ main {
     align-items: center;
     display: flex;
     gap: 15px;
-
-
 }
 
 .ico {
@@ -187,8 +182,7 @@ li {
     background: var(--clr-background-primary);
     border: 2px solid var(--clr-text-primary);
     border-radius: 33px;
-    box-shadow: inset 12px -12px 24px #a6a497,
-            inset -12px 12px 24px #ffffff;
+    box-shadow: inset 12px -12px 24px #a6a497, inset -12px 12px 24px #ffffff;
     counter-increment: bill;
     margin-inline: auto;
     margin-bottom: 2.5rem;
@@ -204,7 +198,6 @@ li::before {
     display: grid;
     place-items: center;
     content: counter(bill);
-    /* padding: 5px; */
     position: absolute;
     height: 40px;
     top: -11px;
@@ -237,8 +230,6 @@ hr {
     width: min(100%, 1000px);
 }
 
-/* ! pressStart */
-
 .bill-info > div {
     display: flex;
     justify-content: space-between;
@@ -253,20 +244,20 @@ hr {
     width: max-content;
 }
 
-.amount-due-full .amount-due-text {
-    display: none;
-    font-weight: bold;
-    font-size: 1.125rem;
-}
-
-.more-info-button {
-    color:#3a8fd4;
+.modal-main-content-wrapper {
+    display: grid;
+    gap: 33px;
+    grid-template-areas: "fileDrop" "uploadFeedback";
 }
 
 .question-mark-ico {
     display: inline-block;
     width: 21px;
     transform: translate(5px, 4px);
+}
+
+.more-info-button {
+    color:#3a8fd4;
 }
 
 .pay-here-ico {
@@ -279,50 +270,86 @@ hr {
     color: green;
 }
 
-.amount-due-value {
+.amount-due-full .amount-due-text {
+    display: none;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.amount-due-full .amount-due-value {
     color: #e65030;
     font-size: 1.313rem;
     font-family: sans-serif;
 }
 
-.zero-balance {
+.amount-due-full .zero-balance {
     color: green;
 }
 
-.table-container { 
+.full-help-modal { 
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
     position: fixed;
+    min-height: 100vh;
     inset: 0;
-    /* * js toggle */
-    /* display: none; */
-    display: grid;
+    width: 100vw;
     place-items: center;
-    grid-template-areas: 'one';
+}
+
+.full-help-modal.open {
+    display: grid;
+}
+
+.modal-close-button-css {
+    background-color: #355059;
+    border-radius: 50%;
+    border: none;
+    box-shadow: inset 0 0 10px white;
+    color: #fffce8;
+    font-size: 1.5rem;
+    height: 60px;
+    position: absolute;
+    right: 0;
+    top: -35%;
+    width: 60px;
+    z-index: 1;
+}
+
+.table-wrapper {
+    position: relative;
 }
 
 .table {
     background-color: ghostwhite;
-    grid-area: one;
-    border-top-right-radius: 11px;
-    box-shadow: 9px 9px 13px #BBA987, inset 0 0 8px black;
-    padding: 50px;
-    
-    position: relative;
-}
-
-table.table {
-    border: 1px solid #355059;
-    border-radius: 13px;
+    border-radius: 88px;
     border-spacing: 0;
+    border-top-right-radius: 11px;
+    border: 5px solid #355059;
+    box-shadow: 9px 9px 13px #5c5c5c, inset 0 0 8px black;
+    padding: 24px 36px;
 }
 
-table.table td,
-table.table th {
+.table td,
+.table th {
     border-bottom: 1px solid #355059;
     padding: 10px;
 }
 
-table.table tr:last-child>td {
+.table tr:last-child>td {
     border-bottom: none;
+}
+
+.table caption {
+    background-color: #355059;
+    border-radius: 33px;
+    box-shadow: inset 0 0 10px white;
+    color: #fffce8;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px 24px;
+    left: 0;
+    position: absolute;
+    top: -35%;
 }
 
 #upload-modal {
@@ -363,21 +390,6 @@ table.table tr:last-child>td {
     font-size: 2.125rem;
 }
 
-.bill-breakdown {
-    display: inline-block;
-    grid-area: one;
-    border: 4px solid#355059;
-    color: #355059;
-    transform: translate(450%, -115px);
-    z-index: 1;
-}
-
-.modal-main-wrapper {
-    display: grid;
-    gap: 33px;
-    grid-template-areas: "fileDrop" "uploadFeedback";
-}
-
 #upload-modal .file-drop-wrapper {
     display: grid;
     grid-area: fileDrop;
@@ -397,17 +409,9 @@ table.table tr:last-child>td {
     width: clamp(275px, 33vw, 350px);
 }
 
-#upload-modal .file-drop-area:hover::before {
-    /* background-color: red; */
-    border-radius: 22px;
-    /* box-shadow: inset 0 0 8px black; */
-    content: '';
-    inset: 0;
-    pointer-events: none;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-} 
+#upload-modal .file-drop-area #fileElem {
+    display: none;
+}
 
 #upload-modal .input-click-area {
     display: grid;
@@ -526,8 +530,16 @@ table.table tr:last-child>td {
     background: #78c8a8;
 }
 
-input[type="file"] {
-    display: none;
+footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+footer > img {
+    margin-bottom: 12px;
+    margin-inline: auto;
+    width: 125px;
 }
 
 @media only screen and (min-width: 768px)  {
@@ -536,7 +548,7 @@ input[type="file"] {
     }
 
 
-    .modal-main-wrapper {
+    .modal-main-content-wrapper {
         grid-template-areas: "fileDrop uploadFeedback";
         grid-template-columns: 1fr 1fr;
     }
