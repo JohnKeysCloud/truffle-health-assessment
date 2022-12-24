@@ -7,52 +7,184 @@
     <title>Truffle Health</title>
     <link rel="icon" href="assets/images/logo-truffle-health.ico" type="image/icon">
     <link rel="stylesheet" href="css/styles.css">
-    <script defer href="js/script.js"></script>
+    <script defer type="module" src="js/script.js"></script>
 </head>
 <body>
-    <div class="modal-wrapper">
-            <dialog open class="modal">
+    <header>
+        <a href="https://www.truffle.health/">
+            <img id="header-logo" src="assets/images/logo-truffle-health.png" alt="Truffle Health Logo">
+        </a>
+        
+        <nav></nav>
+    </header>
 
-                <div class="modal-heading">
-                    <h1 class="modal-header">Upload Files</h1>
-                    <button class="close-button" aria-label="Close">✕</button>
+    <main>
+
+        <section id="main-greeting">
+            <div id="main-header-left">
+                <img class="avatar-image" src="assets/images/avatar.png" alt="avatar">
+                <h1>Hello John, here is a list of your bills:</h1>
+            </div>
+            <div id="main-header-right">
+                <button class="modal-open-button button">Add New Bill</button>
+            </div>
+        </section>
+
+        <ol>
+            <li>
+                <div class="bill-info">
+                    <div class="bill-top">
+                        <h3 class="biller-company"><img class="ico" src="assets/images/company.ico" alt="Company"> Bonner General Orthopedics</h3>
+                        <p class="amount-due-full"><span class="amount-due-text">Amount Due:</span> <span class="amount-due-value">$10</span></p>
+                    </div>
+                    <div class="bill-mid">
+                        <div class="bill-mid-left">
+                            <p class="biller-address"><img class="ico" src="assets/images/location.png" alt="Loaction"> PO Box 1343</p>
+                        </div>
+                        <button class="more-info-button"><img class="question-mark-ico" src="assets/images/question-mark.png" alt="More Info"> More Info</button>
+                    </div>
+                    <div class="bill-end">
+                        <div class="bill-end-left">
+                            <p class="biller-address">Sandpoint, ID 83864</p>
+                        </div>
+                        <button class="pay-here-button"><img class="pay-here-ico" src="assets/images/cash.png" alt="Pay Here"> Pay Here</button>
+                    </div>
                 </div>
-
-                <div class="modal-content-wrapper">
-
-                    <section class="file-drop-wrapper">
-                        <div class="file-drop-area">
-                            <form class="file-form" action="post">
-                                <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
-                                <label class="input-click-area" for="fileElem">
-                                    <p class="drop-files-text">Drop Files Here</p>
-                                    <picture class="upload-icon">
-                                        <img src="assets/images/icon-upload.png">
-                                    </picture>
-                                    <span class="button">Browse</span>
-                                </label>
-                            </form>
+            </li>
+            <hr>
+            <li>
+                <div class="bill-info">
+                    <div class="bill-top">
+                        <h3 class="biller-company"><img class="ico" src="assets/images/company.ico" alt="Company"> Lorem, ipsum dolor sit amet</h3>
+                        <p class="amount-due-full"><span class="amount-due-text">Amount Due:</span> <span class="amount-due-value">$50,000</span></p>
+                    </div>
+                    <div class="bill-mid">
+                        <div class="bill-mid-left">
+                            <p class="biller-address"><img class="ico" src="assets/images/location.png" alt="Loaction"> 2731 Broadway</p>
                         </div>
-                    </section>
-
-                    <section class="upload-feedback-wrapper">
-                        <div class="file-feedback-progress">
-                            <label class="meter-label" for="">file 1</label>
-                            <meter min="0" max="100" value="55"></meter>
+                        <button class="more-info-button"><img class="question-mark-ico" src="assets/images/question-mark.png" alt="More Info"> More Info</button>
+                    </div>
+                    <div class="bill-end">
+                        <div class="bill-end-left">
+                            <p class="biller-address">New York, NY 10025</p>
                         </div>
-                        <div class="file-feedback-progress">
-                            <label class="meter-label" for="">file 2</label>
-                            <meter min="0" max="100" value="22"></meter>
-                        </div>
-                        <div class="file-feedback-progress">
-                            <label class="meter-label" for="">file 3</label>
-                            <meter min="0" max="100" value="77"></meter>
-                        </div>
-                    </section>
-
+                        <button class="pay-here-button"><img class="pay-here-ico" src="assets/images/cash.png" alt="Pay Here"> Pay Here</button>
+                    </div>
                 </div>
+            </li>
+            <hr>
+            <li>
+                <div class="bill-info">
+                    <div class="bill-top">
+                        <h3 class="biller-company"><img class="ico" src="assets/images/company.ico" alt="Company"> Maiores non nesciunt adipisci</h3>
+                        <p class="amount-due-full"><span class="amount-due-text">Amount Due:</span> <span class="amount-due-value zero-balance">$0</span></p>
+                    </div>
+                    <div class="bill-mid">
+                        <div class="bill-mid-left">
+                            <p class="biller-address"><img class="ico" src="assets/images/location.png" alt="Loaction"> Bedford Ave</p>
+                        </div>
+                        <button class="more-info-button"><img class="question-mark-ico" src="assets/images/question-mark.png" alt="More Info"> More Info</button>
+                    </div>
+                    <div class="bill-end">
+                        <div class="bill-end-left">
+                            <p class="biller-address">Brooklyn, NY 11249</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ol>
 
-            </dialog>
-    </div>
+        <div class="table-container">
+            <button class="modal-close-button button bill-breakdown" aria-label="Close">close</button>
+            <table class="table">
+                <caption>Bill Breakdown</caption>
+                <colgroup>
+                    <col span="1">
+                    <col span="1">
+                    <col span="1">
+                    <col span="1">
+                </colgroup>
+                <thead>
+                    <th scope="col">Date</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Insurance Deductions</th>
+                    <th scope="col">Total Amount Due</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>02/11/22</td>
+                        <td>Telephone evaluation. . .</td>
+                        <td>$0.00</td>
+                        <td>$71.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/08/22</td>
+                        <td>Payment insurance Check. . .</td>
+                        <td>$0.00</td>
+                        <td>$71.00</td>
+                    </tr>
+                    <tr>
+                        <td>07/08/22</td>
+                        <td>Payment insurance Check. . .</td>
+                        <td>$31.04</td>
+                        <td>$39.96</td>
+                    </tr>
+                    <tr>
+                        <td>07/08/22</td>
+                        <td>Adjustment Contractual. . .</td>
+                        <td>$29.96</td>
+                        <td>$10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        </div>
+    </main>
+    
+    <footer>
+
+    </footer>
+
+    <dialog id="upload-modal">
+        <div class="modal-heading">
+            <h1 class="modal-header">Upload Files</h1>
+            <button class="modal-close-button" aria-label="Close">✕</button>
+        </div>
+        <div class="modal-main-wrapper">
+            <section class="file-drop-wrapper">
+                <div class="file-drop-area">
+                    <form class="file-form">
+                        <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                        <label class="input-click-area" for="fileElem">
+                            <picture class="upload-icon opaque">
+                                <img class="opaque" src="assets/images/icon-upload.png">
+                            </picture>
+                            <p class="drop-files-label">Drag files to upload</p>
+                            <p class="drop-files-label">or</p>
+                            <div class="button opaque">Browse</div>
+                            <span class="drop-files-label label-sub-text">Max File Size: <span>50MB</span></span>
+                            <span class="drop-files-label label-sub-text">Supported file types: <span>JPG, PNG, GIF, PDF, SVG</span></span>
+                        </label>
+                    </form>
+                </div>
+            </section>
+            <section class="upload-feedback-wrapper">
+                <div class="file-feedback-progress">
+                    <label class="meter-label" for="">file 1</label>
+                    <meter min="0" max="100" value="55"></meter>
+                </div>
+                <div class="file-feedback-progress">
+                    <label class="meter-label" for="">file 2</label>
+                    <meter min="0" max="100" value="22"></meter>
+                </div>
+                <div class="file-feedback-progress">
+                    <label class="meter-label" for="">file 3</label>
+                    <meter min="0" max="100" value="77"></meter>
+                </div>
+            </section>
+        </div>            
+    </dialog>
 </body>
 </html>
