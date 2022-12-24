@@ -293,8 +293,8 @@ hr {
     position: fixed;
     inset: 0;
     /* * js toggle */
-    display: none;
-    /* display: grid; */
+    /* display: none; */
+    display: grid;
     place-items: center;
     grid-template-areas: 'one';
 }
