@@ -308,7 +308,7 @@ hr {
     border: none;
     box-shadow: inset 0 0 10px white;
     color: #fffce8;
-    font-size: 1.5rem;
+    font-size: 1.313rem;
     height: 60px;
     position: absolute;
     right: 5%;
@@ -347,7 +347,7 @@ hr {
     border-radius: 33px;
     box-shadow: inset 0 0 10px white;
     color: #fffce8;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: bold;
     padding: 10px 24px;
     left: 5%;
@@ -364,7 +364,7 @@ hr {
     border-top-right-radius: 11px;
     box-shadow: 9px 9px 13px #BBA987, inset 0 0 8px black;
     margin: auto;
-    padding: 33px 50px 50px 50px;
+    padding-block: 33px;    
     width: min(77vw, 700px);
 } 
 
@@ -378,7 +378,7 @@ hr {
     display: flex;
     justify-content: space-between;
     margin-bottom: 24px;
-    padding-inline: 8px;
+    padding-inline: 21px;
 }
 
 #upload-modal .modal-heading .modal-header {
@@ -409,7 +409,7 @@ hr {
     height: 250px;
     place-items: center;
     position: relative;
-    width: clamp(275px, 33vw, 350px);
+    width: clamp(250px, 33vw, 310px);
 }
 
 #upload-modal .file-drop-area #fileElem {
@@ -465,7 +465,7 @@ hr {
 }
 
 #upload-modal .label-sub-text {
-    font-size: 0.75rem;
+    font-size: 0.625rem;
 }
 
 #upload-modal .input-click-area .button {
@@ -570,6 +570,14 @@ footer > img {
         display: flex;
         flex-direction: row;
         gap: 15px;
+    }
+
+    #upload-modal {
+        padding: 33px 50px 50px 50px;
+    }
+
+    #upload-modal .label-sub-text {
+        font-size: 0.688rem;
     }
 
     .amount-due-full .amount-due-text {

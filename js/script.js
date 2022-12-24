@@ -1,4 +1,3 @@
-
 const billTable = document.querySelector('.full-help-modal');
 const closeModalButton = document.querySelector('.modal-close-button');
 const closeModalButtonCSS = document.querySelector('.modal-close-button-css');
