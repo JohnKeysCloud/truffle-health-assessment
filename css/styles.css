@@ -88,14 +88,14 @@ em {
 
 @font-face {
     font-family: "goshaSansBold";
-    src: url('../assets/fonts/goshaSansRegular.woff2') format('woff2');
+    src: url('../assets/fonts/GoshaSansBold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: "goshaSansRegular";
-    src: url('../assets/fonts/goshaSansRegular.woff2') format('woff2');
+    src: url('../assets/fonts/GoshaSansRegular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
