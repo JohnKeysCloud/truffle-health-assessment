@@ -511,8 +511,8 @@ hr {
     width: clamp(175px, 22vw, 250px);
 }
 
-progress::-webkit-progress-bar,
-progress::-webkit-progress-value {
+#upload-modal progress::-webkit-progress-bar,
+#upload-modal progress::-webkit-progress-value {
     border-radius: 33px;
 }
 
