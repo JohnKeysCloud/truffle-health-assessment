@@ -499,37 +499,45 @@ hr {
     justify-content: center;
 }
 
-#upload-modal .meter-label {
+#upload-modal .progress-label {
     font-family: 'goshaSansRegular', Courier, monospace;
     font-weight: normal;
 }
 
-#upload-modal meter {
-    height: 15px;
+#upload-modal progress {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 11px;
     width: clamp(175px, 22vw, 250px);
 }
 
-#upload-modal .file-feedback-progress:first-of-type meter::-webkit-meter-optimum-value {
+progress::-webkit-progress-bar,
+progress::-webkit-progress-value {
+    border-radius: 33px;
+}
+
+#upload-modal .file-feedback-progress:first-of-type progress::-webkit-progress-value {
+    border-radius: 33px;
     background: #e65030;
 }
 
-#upload-modal .file-feedback-progress:nth-of-type(2) meter::-webkit-meter-optimum-value {
+#upload-modal .file-feedback-progress:nth-of-type(2) progress::-webkit-progress-value {
     background: #efbf7b;
 }
 
-#upload-modal .file-feedback-progress:nth-of-type(3) meter::-webkit-meter-optimum-value {
+#upload-modal .file-feedback-progress:nth-of-type(3) progress::-webkit-progress-value {
     background: #78c8a8;
 }
 
-#upload-modal .file-feedback-progress:first-of-type meter::-moz-meter-bar { /* Firefox Pseudo Class */
+#upload-modal .file-feedback-progress:first-of-type progress::-moz-progress-bar { /* Firefox Pseudo Class */
     background: #e65030;
 }
 
-#upload-modal .file-feedback-progress:nth-of-type(2) meter::-moz-meter-bar { /* Firefox Pseudo Class */
+#upload-modal .file-feedback-progress:nth-of-type(2) progress::-moz-progress-bar { /* Firefox Pseudo Class */
     background: #efbf7b;
 }
 
-#upload-modal .file-feedback-progress:nth-of-type(3) meter::-moz-meter-bar { /* Firefox Pseudo Class */
+#upload-modal .file-feedback-progress:nth-of-type(3) progress::-moz-progress-bar { /* Firefox Pseudo Class */
     background: #78c8a8;
 }
 
