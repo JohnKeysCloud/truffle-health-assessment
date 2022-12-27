@@ -145,12 +145,11 @@ main {
 }
 
 #main-greeting {
-    align-items: center;
+    align-items: end;
     display: flex;
     justify-content: space-between;
     gap: 15px;
     margin-bottom: 50px;
-    /* padding-left: 10vw; */
 }
 
 #main-greeting #main-header-left {
@@ -572,6 +571,9 @@ footer > img {
 }
 
 @media only screen and (min-width: 768px) {
+    #main-greeting {
+    align-items: center;
+    }
 
     #main-greeting #main-header-left {
         align-items: center;
